@@ -6,13 +6,11 @@ import java.util.*;
 @Entity
 public class BankBranch {
     public BankBranch() {
-        this.comptes=new HashSet();
     }
 
-    public BankBranch(Integer code, String adress, Collection<Account> comptes) {
+    public BankBranch(Integer code, String adress) {
         this.code = code;
         this.adress = adress;
-        this.comptes = comptes;
     }
     
     
@@ -24,7 +22,7 @@ public class BankBranch {
     private String adress;
     
     @OneToMany(mappedBy = "agence")
-    private Collection <Account> comptes;
+    private Set <Account> comptes=new HashSet<Account>();
 
     public Integer getCode() {
         return code;
@@ -34,7 +32,7 @@ public class BankBranch {
         return adress;
     }
 
-    public Collection<Account> getComptes() {
+    public Set<Account> getComptes() {
         return comptes;
     }
 
@@ -46,7 +44,7 @@ public class BankBranch {
         this.adress = adress;
     }
 
-    public void setComptes(Collection<Account> comptes) {
+    public void setComptes(Set<Account> comptes) {
         this.comptes = comptes;
     }
     

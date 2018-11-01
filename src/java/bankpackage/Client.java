@@ -7,14 +7,12 @@ import java.util.*;
 public class Client {
 
     public Client() {
-        this.comptes = new HashSet();
     }
 
-    public Client(Integer numClient, String nom, String prenom, Date dateNaiss, Collection<Account> comptes) {
+    public Client(Integer numClient, String nom, String prenom, Date dateNaiss) {
         this.dateNaiss = dateNaiss;
         this.nom = nom;
         this.prenom = prenom;
-        this.comptes = comptes;
     }
     
     @Id
@@ -31,7 +29,7 @@ public class Client {
     private Date dateNaiss = new Date();
 
     @OneToMany(mappedBy = "detenteur")
-    private Collection<Account> comptes;
+    private Set<Account> comptes = new HashSet<Account>();
 
     public Integer getNumClient() {
         return numClient;
@@ -49,7 +47,7 @@ public class Client {
         return dateNaiss;
     }
 
-    public Collection<Account> getComptes() {
+    public Set<Account> getComptes() {
         return comptes;
     }
 
@@ -69,7 +67,7 @@ public class Client {
         this.dateNaiss = dateNaiss;
     }
 
-    public void setComptes(Collection<Account> comptes) {
+    public void setComptes(Set<Account> comptes) {
         this.comptes = comptes;
     }
 
