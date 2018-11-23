@@ -4,15 +4,16 @@ import javax.persistence.*;
 
 @Entity
 public class Account {
+
     public Account() {
-    
+
     }
-    public Account(BankBranch agence,Client detenteur,String iban,String libelle,String numCompte,Double solde) {
+
+    public Account(BankBranch agence, Client detenteur, String iban, String libelle, String numCompte, Double solde) {
         this.agence = agence;
         this.detenteur = detenteur;
         this.iban = iban;
         this.libelle = libelle;
-        this.numCompte = numCompte;
         this.solde = solde;
     }
 

@@ -14,7 +14,7 @@ public class Client {
         this.nom = nom;
         this.prenom = prenom;
     }
-    
+
     @Id
     @Column(length = 8)
     private Integer numClient;
@@ -70,5 +70,9 @@ public class Client {
     public void setComptes(Set<Account> comptes) {
         this.comptes = comptes;
     }
+    /*
+    void setDateNaiss(String string) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }*/
 
 }
