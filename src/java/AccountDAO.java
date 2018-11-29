@@ -1,5 +1,3 @@
-package bankpackage.DAOs;
-import bankpackage.tables.Account;
 import java.util.List;
 /**
  *

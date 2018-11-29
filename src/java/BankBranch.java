@@ -1,5 +1,7 @@
 
-package bankpackage.tables;
+
+
+
 import javax.persistence.*;
 import java.util.*;
 

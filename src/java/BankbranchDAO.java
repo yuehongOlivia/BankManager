@@ -1,24 +1,22 @@
-package bankpackage.DAOs;
-import bankpackage.tables.Client;
 import java.util.List;
 
 
-public class ClientDAO extends DAO<Client> {
-    public ClientDAO(String enM) {
+public class BankbranchDAO extends DAO<BankBranch>{
+     public BankbranchDAO (String enM) {
         super(enM);
     }
-
+    
     public void init() {
         this.em.getTransaction().begin();
     }
 
-     public List<Client> findAll() {
-        return em.createQuery("select c from Client c").getResultList();
+     public List<BankBranch> findAll() {
+        return em.createQuery("select b from BankBranch b").getResultList();
     }
     
     @Override
-    public Client find(int id) {
-       return em.find(Client.class,id);
+    public BankBranch find(int id) {
+       return em.find(BankBranch.class,id);
     }
 
     public void end() {
@@ -27,14 +25,14 @@ public class ClientDAO extends DAO<Client> {
     }
 
     @Override
-    public Client create(Client obj) {
+    public BankBranch create(BankBranch obj) {
         em.persist(obj);
         em.getTransaction().commit();
         return obj;
     }
 
     @Override
-    public Client delete(Client obj) {
+    public BankBranch delete(BankBranch obj) {
         obj = em.merge(obj);
         em.remove(obj);
         em.getTransaction().commit();
@@ -42,9 +40,9 @@ public class ClientDAO extends DAO<Client> {
     }
     
     @Override
-    public Client update(Client obj) {
+    public BankBranch update(BankBranch obj) {
         obj=em.merge(obj);
         return obj;
     }
-    
+
 }

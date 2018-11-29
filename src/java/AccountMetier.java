@@ -1,19 +1,15 @@
-
-package bankpackage.metier;
-import bankpackage.DAOs.AccountDAO;
-import bankpackage.DAOs.DAO;
-import bankpackage.tables.Account;
-import bankpackage.tables.BankBranch;
-import bankpackage.tables.Client;
 import java.util.List;
+import java.util.Scanner;
 import java.util.stream.Collectors;
 
 public class AccountMetier {
+    static Scanner sc = new Scanner(System.in);
     private DAO<Account> accountDao;
     private List<Account> accounts;
 
     public AccountMetier() {
         this.accountDao = new AccountDAO("BankManagerPU");
+        this.accountDao.init();
     }
 
     public String findAccounts() {
@@ -25,12 +21,12 @@ public class AccountMetier {
                 .collect(Collectors.joining(", "));
     }
 
-    public String findAccount(int id) {
+    public Account findAccount(int id) {
         Account account = this.accountDao.find(id);
         if (account == null) {
-            return "Wrong account";
+            System.out.println("not exist in the database");;
         }
-        return account.toString();
+        return account;
     }
 
     public String createAccount(BankBranch agence, Client detenteur, 

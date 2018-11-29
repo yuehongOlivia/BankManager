@@ -1,8 +1,4 @@
-package bankpackage.metier;
 
-import bankpackage.tables.Client;
-import bankpackage.DAOs.ClientDAO;
-import bankpackage.DAOs.DAO;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -31,12 +27,12 @@ public class ClientMetier {
                 .collect(Collectors.joining(", "));
     }
     
-    public String findClient(int id) {
+    public Client findClient(int id) {
         Client client = this.clientDao.find(id);
         if (client == null) {
-            return "Client doesn't exist";
+            System.out.println("Client doesn't exist");
         }
-        return client.toString();
+        return client;
     }
     
     public String createClient() throws ParseException {

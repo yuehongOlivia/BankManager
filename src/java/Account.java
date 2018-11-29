@@ -1,6 +1,6 @@
-package bankpackage.tables;
 
-import bankpackage.tables.BankBranch;
+
+
 import javax.persistence.*;
 
 @Entity

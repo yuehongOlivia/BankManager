@@ -1,17 +1,15 @@
-package bankpackage.metier;
-import bankpackage.DAOs.BankbranchDAO;
-import bankpackage.DAOs.DAO;
-import bankpackage.tables.BankBranch;
-import bankpackage.tables.Account;
 import java.util.List;
+import java.util.Scanner;
 import java.util.stream.Collectors;
 
 public class BankbranchMetier {
+    static Scanner sc = new Scanner(System.in);
     private DAO<BankBranch> bankbDao;
     private List<BankBranch> banks;
 
     public BankbranchMetier() {
         this.bankbDao = new BankbranchDAO("BankManagerPU");
+        this.bankbDao.init();
     }
 
     public String findBankbs() {
@@ -23,12 +21,12 @@ public class BankbranchMetier {
                 .collect(Collectors.joining(", "));
     }
 
-    public String findBankb(int id) {
+    public BankBranch findBankb(int id) {
         BankBranch b = this.bankbDao.find(id);
         if (b == null) {
-            return "Wrong bankbranch";
+            System.out.println("Wrong bankbranch");
         }
-        return b.getAdress();
+        return b;
     }
 
     public String createBankbranch(Integer code, String adress) {
@@ -51,14 +49,8 @@ public class BankbranchMetier {
         this.bankbDao.update(b);
         return b.getAdress();
     }
-    
-    public String addAccount(BankBranch b,Account a) {
-        b.getComptes().add(a);
-        this.bankbDao.update(b);
-        return a.getNumCompte().toString();
-    } 
 
-    public void endAccount() {
+    public void endBankb() {
         this.bankbDao.end();
     }    
 }
