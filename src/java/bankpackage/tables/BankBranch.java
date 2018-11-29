@@ -1,5 +1,5 @@
 
-package bankpackage;
+package bankpackage.tables;
 import javax.persistence.*;
 import java.util.*;
 
@@ -16,6 +16,7 @@ public class BankBranch {
     
     @Id
     @Column(length = 5)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer code;
     
     @Column(nullable=false,length=50,unique=true)

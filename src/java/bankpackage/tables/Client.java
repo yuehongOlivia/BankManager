@@ -1,4 +1,4 @@
-package bankpackage;
+package bankpackage.tables;
 
 import javax.persistence.*;
 import java.util.*;
@@ -9,7 +9,7 @@ public class Client {
     public Client() {
     }
 
-    public Client(Integer numClient, String nom, String prenom, Date dateNaiss) {
+    public Client(String nom, String prenom, Date dateNaiss) {
         this.dateNaiss = dateNaiss;
         this.nom = nom;
         this.prenom = prenom;
@@ -17,6 +17,7 @@ public class Client {
 
     @Id
     @Column(length = 8)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer numClient;
 
     @Column(nullable = false, length = 30)
@@ -25,7 +26,7 @@ public class Client {
     @Column(nullable = false, length = 30)
     private String prenom;
 
-    @Column(name = "DateNaissance", nullable = false, length = 30)
+    @Column(name = "DateNaissance", nullable = false)
     private Date dateNaiss = new Date();
 
     @OneToMany(mappedBy = "detenteur")

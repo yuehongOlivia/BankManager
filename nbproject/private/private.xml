@@ -2,6 +2,14 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/D:/M1%20MIAGE/ISI2/Projects/BankManager/src/java/metier/ClientMetier.java</file>
+            <file>file:/D:/M1%20MIAGE/ISI2/Projects/BankManager/src/java/bankpackage/tables/BankBranch.java</file>
+            <file>file:/D:/M1%20MIAGE/ISI2/Projects/BankManager/src/java/bankpackage/main/Bankmanager.java</file>
+            <file>file:/D:/M1%20MIAGE/ISI2/Projects/BankManager/src/java/bankpackage/tables/Client.java</file>
+            <file>file:/D:/M1%20MIAGE/ISI2/Projects/BankManager/src/java/bankpackage/DAOs/ClientDAO.java</file>
+            <file>file:/D:/M1%20MIAGE/ISI2/Projects/BankManager/src/java/bankpackage/DAOs/DAO.java</file>
+            <file>file:/D:/M1%20MIAGE/ISI2/Projects/BankManager/src/java/bankpackage/tables/Account.java</file>
+        </group>
     </open-files>
 </project-private>

@@ -1,5 +1,6 @@
-package bankpackage;
+package bankpackage.tables;
 
+import bankpackage.tables.BankBranch;
 import javax.persistence.*;
 
 @Entity
@@ -19,6 +20,7 @@ public class Account {
 
     @Id
     @Column(length = 11)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private String numCompte;
 
     @Column(nullable = false, length = 50)
